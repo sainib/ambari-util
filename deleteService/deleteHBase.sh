@@ -32,6 +32,11 @@ cp -rf /etc/knox /tmp/hbase-install/pre-install/conf-backup/ 2>/dev/null
 cp -rf /etc/hive /tmp/hbase-install/pre-install/conf-backup/ 2>/dev/null
 
 
+#---- LETS STOP HBASE SERVER --- 
+curl -u $USER:$PASS -i -H 'X-Requested-By: ambari' -X PUT -d \
+  '{"RequestInfo": {"context" :"Stop '"$SERVICE"' via REST"}, "Body": {"ServiceInfo": {"state": "INSTALLED"}}}' \
+  http://$HOST/api/v1/clusters/$CLUSTER/services/$SERVICE
+
 #---- LETS REMOVE HBASE FROM AMBARI --- 
 echo Removing $SERVICE from Ambari Service Registry..
 curl -u $USER:$PASS -i -H 'X-Requested-By: ambari' -X DELETE http://$HOST/api/v1/clusters/$CLUSTER/services/$SERVICE
