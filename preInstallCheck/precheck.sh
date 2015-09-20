@@ -33,10 +33,10 @@ sleep ${wait_time}
 
 echo "Checking Services"
 echo "---------------------------------------------"
-echo "sudo chkconfig --list | grep ntp  2>/dev/null | grep -v \#"
-sudo chkconfig --list | grep ntp  2>/dev/null | grep -v \#
-echo "sudo chkconfig --list | grep iptable  2>/dev/null | grep -v \#"
-sudo chkconfig --list | grep iptable  2>/dev/null | grep -v \#
+echo "sudo chkconfig --list  2>/dev/null | grep ntp  "
+sudo chkconfig --list  2>/dev/null | grep ntp 
+echo "sudo chkconfig --list  2>/dev/null | grep iptable "
+sudo chkconfig --list  2>/dev/null | grep iptable
 echo ""
 echo ""
 
