@@ -1,11 +1,11 @@
 #!/bin/bash 
 
 
-wait_time=3
+wait_time=10
 
 echo "Checking Mount"
 echo "---------------------------------------------"
-echo ""
+echo "sudo mount 2>/dev/nul | grep -v \#"
 sudo mount 2>/dev/nul | grep -v \#
 echo ""
 echo ""
@@ -14,7 +14,7 @@ sleep ${wait_time}
 
 echo "Checking limits.conf"
 echo "---------------------------------------------"
-echo ""
+echo "sudo cat /etc/security/limits.conf  2>/dev/nul | grep -v \#"
 sudo cat /etc/security/limits.conf  2>/dev/nul | grep -v \#
 echo ""
 echo ""
@@ -24,7 +24,7 @@ sleep ${wait_time}
 
 echo "Checking sysctl.conf"
 echo "---------------------------------------------"
-echo ""
+echo "sudo cat /etc/sysctl.conf  2>/dev/nul | grep -v \#"
 sudo cat /etc/sysctl.conf  2>/dev/nul | grep -v \#
 echo ""
 echo ""
@@ -33,8 +33,9 @@ sleep ${wait_time}
 
 echo "Checking Services"
 echo "---------------------------------------------"
-echo ""
+echo "sudo chkconfig --list | grep ntp  2>/dev/nul | grep -v \#"
 sudo chkconfig --list | grep ntp  2>/dev/nul | grep -v \#
+echo "sudo chkconfig --list | grep iptable  2>/dev/nul | grep -v \#"
 sudo chkconfig --list | grep iptable  2>/dev/nul | grep -v \#
 echo ""
 echo ""
@@ -44,7 +45,7 @@ sleep ${wait_time}
 
 echo "Checking rc.local"
 echo "---------------------------------------------"
-echo ""
+echo "sudo cat /etc/rc.local 2>/dev/nul | grep -v \#"
 sudo cat /etc/rc.local 2>/dev/nul | grep -v \#
 echo ""
 echo ""
@@ -114,9 +115,10 @@ sleep ${wait_time}
 
 echo "Checking background processes for resource consumptions"
 echo "---------------------------------------------"
-echo ""
+echo "top -n 1 -b -o +%CPU | head -20"
 top -n 1 -b -o +%CPU | head -20
 echo "---------------------------------------------"
+echo "top -n 1 -b -o +%MEM | head -20"
 top -n 1 -b -o +%MEM | head -20
 echo ""
 
@@ -125,13 +127,16 @@ sleep ${wait_time}
 
 echo "Checking Libraries"
 echo "---------------------------------------------"
-echo ""
+echo "rpm -qa | grep mapr "
 rpm -qa | grep mapr 
 echo "---------------------------------------------"
+echo "ls -ltra /opt/mapr"
 ls -ltra /opt/mapr
 echo "---------------------------------------------"
+echo "ls -ltra /opt/cores"
 ls -ltra /opt/cores
 echo "---------------------------------------------"
+echo "ls -ltra /usr"
 ls -ltra /usr
 echo "---------------------------------------------"
 echo ""
