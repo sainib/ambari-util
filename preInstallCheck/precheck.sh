@@ -104,8 +104,9 @@ sleep ${wait_time}
 
 echo "Checking Commands"
 echo "---------------------------------------------"
-echo ""
+echo "command -v hdfs"
 command -v "hdfs" 
+echo "command -v hadoop"
 command -v "hadoop"
 echo ""
 echo ""
