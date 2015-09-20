@@ -5,8 +5,8 @@ wait_time=10
 
 echo "Checking Mount"
 echo "---------------------------------------------"
-echo "sudo mount 2>/dev/nul | grep -v \#"
-sudo mount 2>/dev/nul | grep -v \#
+echo "sudo mount 2>/dev/null | grep -v \#"
+sudo mount 2>/dev/null | grep -v \#
 echo ""
 echo ""
 
@@ -14,8 +14,8 @@ sleep ${wait_time}
 
 echo "Checking limits.conf"
 echo "---------------------------------------------"
-echo "sudo cat /etc/security/limits.conf  2>/dev/nul | grep -v \#"
-sudo cat /etc/security/limits.conf  2>/dev/nul | grep -v \#
+echo "sudo cat /etc/security/limits.conf  2>/dev/null | grep -v \#"
+sudo cat /etc/security/limits.conf  2>/dev/null | grep -v \#
 echo ""
 echo ""
 
@@ -24,8 +24,8 @@ sleep ${wait_time}
 
 echo "Checking sysctl.conf"
 echo "---------------------------------------------"
-echo "sudo cat /etc/sysctl.conf  2>/dev/nul | grep -v \#"
-sudo cat /etc/sysctl.conf  2>/dev/nul | grep -v \#
+echo "sudo cat /etc/sysctl.conf  2>/dev/null | grep -v \#"
+sudo cat /etc/sysctl.conf  2>/dev/null | grep -v \#
 echo ""
 echo ""
 
@@ -33,10 +33,10 @@ sleep ${wait_time}
 
 echo "Checking Services"
 echo "---------------------------------------------"
-echo "sudo chkconfig --list | grep ntp  2>/dev/nul | grep -v \#"
-sudo chkconfig --list | grep ntp  2>/dev/nul | grep -v \#
-echo "sudo chkconfig --list | grep iptable  2>/dev/nul | grep -v \#"
-sudo chkconfig --list | grep iptable  2>/dev/nul | grep -v \#
+echo "sudo chkconfig --list | grep ntp  2>/dev/null | grep -v \#"
+sudo chkconfig --list | grep ntp  2>/dev/null | grep -v \#
+echo "sudo chkconfig --list | grep iptable  2>/dev/null | grep -v \#"
+sudo chkconfig --list | grep iptable  2>/dev/null | grep -v \#
 echo ""
 echo ""
 
@@ -45,8 +45,8 @@ sleep ${wait_time}
 
 echo "Checking rc.local"
 echo "---------------------------------------------"
-echo "sudo cat /etc/rc.local 2>/dev/nul | grep -v \#"
-sudo cat /etc/rc.local 2>/dev/nul | grep -v \#
+echo "sudo cat /etc/rc.local 2>/dev/null | grep -v \#"
+sudo cat /etc/rc.local 2>/dev/null | grep -v \#
 echo ""
 echo ""
 
