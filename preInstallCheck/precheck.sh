@@ -46,6 +46,8 @@ echo "sudo chkconfig --list  2>/dev/null | grep ntp  "
 sudo chkconfig --list  2>/dev/null | grep ntp 
 echo "sudo chkconfig --list  2>/dev/null | grep iptable "
 sudo chkconfig --list  2>/dev/null | grep iptable
+echo "sudo service ntpd status "
+sudo chkconfig --list  2>/dev/null | grep iptable
 echo ""
 echo ""
 echo "---------------------------------------------"
