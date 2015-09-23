@@ -11,8 +11,8 @@ echo ""
 echo ""
 echo "---------------------------------------------"
 
+sleep ${wait_time}
 
-echo "---------------------------------------------"
 echo ">>>>> Checking UMASK"
 echo "umask"
 umask
