@@ -31,7 +31,7 @@ echo "---------------------------------------------"
 
 sleep ${wait_time}
 
-
+#TODO - use checkSysCtl instead..
 echo ">>>>> Checking sysctl.conf"
 echo "sudo cat /etc/sysctl.conf  2>/dev/null | grep -v \#"
 sudo cat /etc/sysctl.conf  2>/dev/null | grep -v \#
@@ -132,6 +132,14 @@ echo "top -n 1 -b -o +%MEM | head -20"
 top -n 1 -b -o +%MEM | head -20
 echo ""
 echo "---------------------------------------------"
+sleep ${wait_time}
+
+
+echo ">>>>> Checking yum repo"
+echo "yum repolist"
+yum repolist
+echo ""
+echo "---------------------------------------------"
 
 sleep ${wait_time}
 
@@ -150,8 +158,21 @@ ls -ltra /usr
 echo ""
 echo ""
 echo "---------------------------------------------"
+sleep ${wait_time}
+
+echo ">>>>> Finding anything mapr"
+echo "yum repolist"
+yum repolist
+echo ""
+echo "---------------------------------------------"
 
 sleep ${wait_time}
+
+#TODO
+#1 - check env variables - printenv
+#2 - processes - ps -ef | grep mapr
+#3 - find all mapr files 
+#4 - check if a user can be added with a homedirectory or not.. if not change /etc/default/useradd
 
 
 echo ">>>>> Checking Done"
