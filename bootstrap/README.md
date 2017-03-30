@@ -1,8 +1,8 @@
-#Steps to quickly bootstrap Openstack based cluster
+# Steps to quickly bootstrap Openstack based cluster
 
-#Overview 
+# Overview 
 
-##Run the following on master
+## Run the following on master
 ------------------------------------------------
 ```
 git clone 
@@ -25,10 +25,10 @@ bash master-0.sh
 ```
 
 ------------------------------------------------
-##Run the following on all worker nodes
+## Run the following on all worker nodes
 
-#copy and paste the id_rsa.pub content from other server into the authorized_keys on worker
 ```
+#copy and paste the id_rsa.pub content from other server into the authorized_keys on worker
 vi ~/.ssh/authorized_keys
 ```
 
