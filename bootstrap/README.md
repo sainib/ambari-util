@@ -5,7 +5,7 @@
 ## Run the following on master
 ------------------------------------------------
 ```
-git clone 
+git clone https://github.com/sainib/ambari-util.git
 ```
 -- Rearrange the files and directories ~ TBD 
 
