@@ -5,7 +5,7 @@
 ## Run the following on master
 ------------------------------------------------
 ```
-yum install git
+yum -y install git
 git clone https://github.com/sainib/ambari-util.git
 ```
 -- Rearrange the files and directories ~ TBD 
