@@ -53,6 +53,7 @@ vi Hostdetail.txt
 server1
 server2
 
+cp /root/ambari-util/ambari-bootstarp/hosts ~/install/
 vi ~/install/hosts
 #Add all host enteries in the following format
 1.2.3.4 server1
