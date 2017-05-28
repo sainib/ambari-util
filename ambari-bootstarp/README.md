@@ -5,6 +5,7 @@
 ## Run the following on master
 ------------------------------------------------
 ```
+yum -y update
 yum -y install git
 git clone https://github.com/sainib/ambari-util.git
 ```
@@ -27,6 +28,10 @@ vi ~/install/hosts
 
 ------------------------------------------------
 ## Run the following on all worker nodes
+```
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+```
 
 ```
 #copy and paste the id_rsa.pub content from other server into the authorized_keys on worker
