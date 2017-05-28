@@ -64,9 +64,8 @@ vi ~/install/hosts
 cd /root/ambari-util/ambari-bootstarp/
 unzip tools.zip
 cp /root/ambari-util/ambari-bootstarp/tools/* ~/install/
+cp /root/ambari-util/ambari-bootstarp/mysql-connector-java.jar ~/install/
 ```
-
-
 
 ------------------------------------------------
 
@@ -108,3 +107,7 @@ ambari-server setup
 ambari-server start
 ```
 
+## Post Install 
+```
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
+```
