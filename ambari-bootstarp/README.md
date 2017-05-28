@@ -61,7 +61,7 @@ vi ~/install/hosts
 
 
 ##---Execute the following steps manually -----
-cd /root/ambari-util/ambari-bootstarp/t
+cd /root/ambari-util/ambari-bootstarp/
 unzip tools.zip
 cp /root/ambari-util/ambari-bootstarp/tools/* ~/install/
 ```
