@@ -49,10 +49,14 @@ cp /root/ambari-util/ambari-bootstarp/worker* .
 
 ##---Execute the following steps manually -----
 vi Hostdetail.txt
-#Add all host names in the file 
+#Add all host names in the file in the following format 
+server1
+server2
 
 vi ~/install/hosts
-#Add all host enteries 
+#Add all host enteries in the following format
+1.2.3.4 server1
+2.3.4.5 server2
 ```
 
 ------------------------------------------------
