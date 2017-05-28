@@ -30,6 +30,12 @@ cat ~/.ssh/id_rsa.pub
 vi ~/.ssh/authorized_keys
 ```
 
+### Test that password-less SSH is working from ambari to other nodes.
+```
+#run the command on ambari node
+ssh <node-name>
+```
+
 ------------------------------------------------
 
 
