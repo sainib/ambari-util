@@ -58,14 +58,22 @@ vi ~/install/hosts
 #Add all host enteries in the following format
 1.2.3.4 server1
 2.3.4.5 server2
+
+
+##---Execute the following steps manually -----
+cd /root/ambari-util/ambari-bootstarp/t
+unzip tools.zip
+cp /root/ambari-util/ambari-bootstarp/tools/* ~/install/
 ```
+
+
 
 ------------------------------------------------
 
 ## Run the following on ambari node
 --- Run using run_command.sh 
 ```
-cd /root/ambari-util/ambari-bootstarp/tools
+cd ~/install
 bash run_command.sh 'ifconfig'  | grep broadcast | grep netmask
 bash run_command.sh 'yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients'
 bash run_command.sh 'systemctl is-enabled ntpd'
