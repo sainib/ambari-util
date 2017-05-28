@@ -19,15 +19,12 @@ bash master-worker-0.sh
 ------------------------------------------------
 ## Run the following on all worker nodes
 ### This step will generate ssh keys
+### Copy the ssh keys FROM ambari server nodes TO all other nodes
 ```
+# Before running the commands below - copy the content of the file ~/.ssh/id_rsa.pub on AMABRI SERVER
 ssh-keygen
-cat ~/.ssh/id_rsa.pub
-```
-
-### Copy the ssh keys from other nodes to ambari server nodes
-```
-#copy and paste the id_rsa.pub content from other server into the authorized_keys on worker
 vi ~/.ssh/authorized_keys
+# Add the content of the file ~/.ssh/id_rsa.pub on AMABRI SERVER into this file on this node
 ```
 
 ### Test that password-less SSH is working from ambari to other nodes.
