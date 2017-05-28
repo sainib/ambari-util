@@ -2,39 +2,54 @@
 
 # Overview 
 
-## Run the following on master
+## Run the following on ALL nodes 
+### This step will install git and get the code. 
 ------------------------------------------------
 ```
 yum -y install git
+
+cd
+
 git clone https://github.com/sainib/ambari-util.git
-```
--- run master-worker-0.sh on master 
-```
+
 bash master-worker-0.sh
 ```
-
--- run following commands manually on ambari server - 
-```
-cd ~/install
-vi Hostdetail.txt
-#Add all host names in the file 
-
-vi ~/install/hosts
-#Add all host enteries 
-```
-
-
+------------------------------------------------
 
 ------------------------------------------------
 ## Run the following on all worker nodes
+### This step will generate ssh keys
 ```
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
 
+### Copy the ssh keys from other nodes to ambari server nodes
 ```
 #copy and paste the id_rsa.pub content from other server into the authorized_keys on worker
 vi ~/.ssh/authorized_keys
+```
+
+------------------------------------------------
+
+
+## Run the following on ambari node
+### This step will create the directory under ~ to centrally place the files needed for the setup process. 
+------------------------------------------------
+
+```
+cd 
+mkdir install 
+cd ~/install
+cp /root/ambari-util/ambari-bootstarp/worker* . 
+
+
+##---Execute the following steps manually -----
+vi Hostdetail.txt
+#Add all host names in the file 
+
+vi ~/install/hosts
+#Add all host enteries 
 ```
 
 ------------------------------------------------
