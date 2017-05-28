@@ -103,7 +103,7 @@ bash run_command.sh 'bash /tmp/worker-1.sh'
 ```
 wget -nv <Ambari-Repo-URL> -O /etc/yum.repos.d/ambari.repo
 yum repolist
-yum install ambari-server
+yum -y install ambari-server
 ambari-server setup
 ambari-server start
 ```
