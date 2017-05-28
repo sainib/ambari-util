@@ -8,7 +8,10 @@
 yum -y install git
 git clone https://github.com/sainib/ambari-util.git
 ```
--- Rearrange the files and directories ~ TBD 
+-- run master-0.sh on master 
+```
+bash master-0.sh
+```
 
 -- run following commands manually on ambari server - 
 ```
@@ -20,10 +23,7 @@ vi ~/install/hosts
 #Add all host enteries 
 ```
 
--- run master-0.sh on master 
-```
-bash master-0.sh
-```
+
 
 ------------------------------------------------
 ## Run the following on all worker nodes
