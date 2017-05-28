@@ -5,7 +5,6 @@
 ## Run the following on master
 ------------------------------------------------
 ```
-yum -y update
 yum -y install git
 git clone https://github.com/sainib/ambari-util.git
 ```
