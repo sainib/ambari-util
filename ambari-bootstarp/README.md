@@ -8,9 +8,9 @@
 yum -y install git
 git clone https://github.com/sainib/ambari-util.git
 ```
--- run master-0.sh on master 
+-- run master-worker-0.sh on master 
 ```
-bash master-0.sh
+bash master-worker-0.sh
 ```
 
 -- run following commands manually on ambari server - 
