@@ -12,6 +12,8 @@ cd
 
 git clone https://github.com/sainib/ambari-util.git
 
+cd /root/ambari-util/ambari-bootstarp
+
 bash master-worker-0.sh
 ```
 ------------------------------------------------
