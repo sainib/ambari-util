@@ -6,6 +6,8 @@
 ### This step will install git and get the code. 
 ------------------------------------------------
 ```
+sudo su 
+
 yum -y install git
 
 cd
