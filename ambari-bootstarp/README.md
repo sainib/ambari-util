@@ -47,8 +47,7 @@ ssh <node-name>
 cd 
 mkdir install 
 cd ~/install
-cp /root/ambari-util/ambari-bootstarp/worker* . 
-
+cp /root/ambari-util/ambari-bootstarp/* . 
 
 ##---Execute the following steps manually -----
 vi Hostdetail.txt
@@ -56,18 +55,12 @@ vi Hostdetail.txt
 server1
 server2
 
-cp /root/ambari-util/ambari-bootstarp/hosts ~/install/
-vi ~/install/hosts
-#Add all host enteries in the following format
-1.2.3.4 server1
-2.3.4.5 server2
-
+bash createHostsFile.sh
 
 ##---Execute the following steps manually -----
-cd /root/ambari-util/ambari-bootstarp/
 unzip tools.zip
-cp /root/ambari-util/ambari-bootstarp/tools/* ~/install/
-cp /root/ambari-util/ambari-bootstarp/mysql-connector-java.jar ~/install/
+cp ./tools/* .
+rm -rf __MACOSX/ tools
 ```
 
 ------------------------------------------------
