@@ -102,10 +102,10 @@ wget -nv <Ambari-Repo-URL> -O /etc/yum.repos.d/ambari.repo
 yum repolist
 yum -y install ambari-server
 ambari-server setup
-ambari-server start
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
 ```
 
-## Post Install 
+## Start Ambari Server
 ```
-ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
+ambari-server start
 ```
