@@ -79,15 +79,17 @@ bash copy_file.sh ~/install/hosts /tmp
 bash copy_file.sh ~/install/worker-0.sh /tmp
 
 bash run_command.sh 'bash /tmp/worker-0.sh'
-bash run_command.sh 'hostname'
-bash run_command.sh 'hostname -f'
-                        
-bash run_command.sh 'cat /etc/sysconfig/network'
-bash run_command.sh 'cat /etc/selinux/config'
 bash run_command.sh 'umask 0022'
 
 bash copy_file.sh ~/install/worker-1.sh /tmp
 bash run_command.sh 'bash /tmp/worker-1.sh'
+
+#Lets check the configs to confirm updates
+bash run_command.sh 'hostname'
+bash run_command.sh 'hostname -f'
+bash run_command.sh 'cat /etc/sysconfig/network'
+bash run_command.sh 'cat /etc/selinux/config'
+
 ```
 
 ------------------------------------------------
