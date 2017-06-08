@@ -104,6 +104,10 @@ yum -y install ambari-server
 ambari-server setup
 ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
 ```
+HDP 2.6 
+```
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+```
 
 ## Start Ambari Server
 ```
