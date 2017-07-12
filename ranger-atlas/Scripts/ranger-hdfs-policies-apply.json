@@ -1,0 +1,208 @@
+{
+  "metaDataInfo": {
+    "Host name": "abajwa-hdp26-hortonia0.field.hortonworks.com",
+    "Exported by": "admin",
+    "Export time": "Jun 29, 2017 7:12:48 AM",
+    "Ranger apache version": "0.7.0.2.6.1.0-129"
+  },
+  "policies": [
+    {
+      "service": "hdp26_hadoop",
+      "name": "all - path",
+      "policyType": 0,
+      "description": "Policy for all - path",
+      "isAuditEnabled": true,
+      "resources": {
+        "path": {
+          "values": [
+            "/*"
+          ],
+          "isExcludes": false,
+          "isRecursive": true
+        }
+      },
+      "policyItems": [
+        {
+          "accesses": [
+            {
+              "type": "read",
+              "isAllowed": true
+            },
+            {
+              "type": "write",
+              "isAllowed": true
+            },
+            {
+              "type": "execute",
+              "isAllowed": true
+            }
+          ],
+          "users": [
+            "hdfs",
+            "ambari-qa"
+          ],
+          "groups": [],
+          "conditions": [],
+          "delegateAdmin": true
+        }
+      ],
+      "denyPolicyItems": [],
+      "allowExceptions": [],
+      "denyExceptions": [],
+      "dataMaskPolicyItems": [],
+      "rowFilterPolicyItems": [],
+      "id": 31,
+      "isEnabled": true,
+      "version": 1
+    },
+    {
+      "service": "hdp26_hadoop",
+      "name": "kms-audit-path",
+      "policyType": 0,
+      "description": "Policy for kms-audit-path",
+      "isAuditEnabled": true,
+      "resources": {
+        "path": {
+          "values": [
+            "/ranger/kms/audit"
+          ],
+          "isExcludes": false,
+          "isRecursive": true
+        }
+      },
+      "policyItems": [
+        {
+          "accesses": [
+            {
+              "type": "read",
+              "isAllowed": true
+            },
+            {
+              "type": "write",
+              "isAllowed": true
+            },
+            {
+              "type": "execute",
+              "isAllowed": true
+            }
+          ],
+          "users": [
+            "keyadmin"
+          ],
+          "groups": [],
+          "conditions": [],
+          "delegateAdmin": false
+        }
+      ],
+      "denyPolicyItems": [],
+      "allowExceptions": [],
+      "denyExceptions": [],
+      "dataMaskPolicyItems": [],
+      "rowFilterPolicyItems": [],
+      "id": 32,
+      "isEnabled": true,
+      "version": 1
+    },
+    {
+      "service": "hdp26_hadoop",
+      "name": "/hive_data",
+      "policyType": 0,
+      "description": "",
+      "isAuditEnabled": true,
+      "resources": {
+        "path": {
+          "values": [
+            "/hive_data"
+          ],
+          "isExcludes": false,
+          "isRecursive": true
+        }
+      },
+      "policyItems": [
+        {
+          "accesses": [
+            {
+              "type": "read",
+              "isAllowed": true
+            },
+            {
+              "type": "write",
+              "isAllowed": true
+            },
+            {
+              "type": "execute",
+              "isAllowed": true
+            }
+          ],
+          "users": [
+            "hive"
+          ],
+          "groups": [],
+          "conditions": [],
+          "delegateAdmin": false
+        }
+      ],
+      "denyPolicyItems": [],
+      "allowExceptions": [],
+      "denyExceptions": [],
+      "dataMaskPolicyItems": [],
+      "rowFilterPolicyItems": [],
+      "id": 33,
+      "isEnabled": true,
+      "version": 1
+    },
+    {
+      "service": "hdp26_hadoop",
+      "name": "home dir",
+      "policyType": 0,
+      "description": "",
+      "isAuditEnabled": true,
+      "resources": {
+        "path": {
+          "values": [
+            "/user/{USER}"
+          ],
+          "isExcludes": false,
+          "isRecursive": true
+        }
+      },
+      "policyItems": [
+        {
+          "accesses": [
+            {
+              "type": "read",
+              "isAllowed": true
+            },
+            {
+              "type": "write",
+              "isAllowed": true
+            },
+            {
+              "type": "execute",
+              "isAllowed": true
+            }
+          ],
+          "users": [
+            "{USER}"
+          ],
+          "groups": [],
+          "conditions": [],
+          "delegateAdmin": false
+        }
+      ],
+      "denyPolicyItems": [],
+      "allowExceptions": [],
+      "denyExceptions": [],
+      "dataMaskPolicyItems": [],
+      "rowFilterPolicyItems": [],
+      "id": 35,
+      "isEnabled": true,
+      "version": 2
+    }
+  ],
+  "startIndex": 0,
+  "pageSize": 0,
+  "totalCount": 0,
+  "resultSize": 0,
+  "queryTimeMS": 1498720368024
+}

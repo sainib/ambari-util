@@ -1,0 +1,80 @@
+{
+  "metaDataInfo": {
+    "Host name": "abajwa-hdp26-hortonia0.field.hortonworks.com",
+    "Exported by": "admin",
+    "Export time": "Jun 28, 2017 10:59:08 PM",
+    "Ranger apache version": "0.7.0.2.6.1.0-129"
+  },
+  "policies": [
+    {
+      "service": "hdp26_kafka",
+      "name": "all - topic",
+      "policyType": 0,
+      "description": "Policy for all - topic",
+      "isAuditEnabled": true,
+      "resources": {
+        "topic": {
+          "values": [
+            "*"
+          ],
+          "isExcludes": false,
+          "isRecursive": false
+        }
+      },
+      "policyItems": [
+        {
+          "accesses": [
+            {
+              "type": "publish",
+              "isAllowed": true
+            },
+            {
+              "type": "consume",
+              "isAllowed": true
+            },
+            {
+              "type": "configure",
+              "isAllowed": true
+            },
+            {
+              "type": "describe",
+              "isAllowed": true
+            },
+            {
+              "type": "create",
+              "isAllowed": true
+            },
+            {
+              "type": "delete",
+              "isAllowed": true
+            },
+            {
+              "type": "kafka_admin",
+              "isAllowed": true
+            }
+          ],
+          "users": [
+            "kafka",
+            "ANONYMOUS"
+          ],
+          "groups": [],
+          "conditions": [],
+          "delegateAdmin": true
+        }
+      ],
+      "denyPolicyItems": [],
+      "allowExceptions": [],
+      "denyExceptions": [],
+      "dataMaskPolicyItems": [],
+      "rowFilterPolicyItems": [],
+      "id": 4,
+      "isEnabled": true,
+      "version": 4
+    }
+  ],
+  "startIndex": 0,
+  "pageSize": 0,
+  "totalCount": 0,
+  "resultSize": 0,
+  "queryTimeMS": 1498690748835
+}
