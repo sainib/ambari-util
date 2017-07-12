@@ -2,6 +2,7 @@
 
 Need to clean up the process below.. Some ToDos are listed and also convert the process into an automated script 
 
+Also - Now that I have moved the setup stuff under the ambari-util - the some of teh paths below will chage. 
 
 ```
 
