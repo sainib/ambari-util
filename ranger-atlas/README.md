@@ -30,9 +30,6 @@ source ~/ambari-bootstrap/extras/ambari_functions.sh
 cd ~/masterclass/ranger-atlas/HortoniaMunichSetup
 ./04-create-os-users.sh    
 
-#also need anonymous user for kafka Ranger policy
-useradd ANONYMOUS    
-bash run_command.sh 'useradd ANONYMOUS'
 
 ###### ALSO RUN THIS SCRIPT ON THE HOST THAT HAS RANGER ADMIN AND RANGER USERSYNC !!!!!
 cd ~/install/
