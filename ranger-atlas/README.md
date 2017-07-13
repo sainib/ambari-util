@@ -268,6 +268,10 @@ sleep 5
     beeline -u "jdbc:hive2://birens-hdp2.field.hortonworks.com:10000" -n hive -e "show databases"
     
 
+  ### MANUALLY IMPORT THE ZEPPELIN NOTEBOOKS FROM HERE -- https://github.com/sainib/ambari-util/tree/master/ranger-atlas/Notebooks
+
+
+
 
 echo "Done!"
 
