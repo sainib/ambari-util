@@ -235,12 +235,18 @@ sleep 5
               "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=kafka"
     sleep 40    
     
+    # 
+    ### Manually Create a new service for tag based policies with any service name 
+    # 
+    
+    
+    
     ## Import Tags
     
      ${ranger_curl} -X POST \
     -H "Content-Type: multipart/form-data" \
     -H "Content-Type: application/json" \
-    -F 'file=@ranger-policies-tags.json' \
+    -F 'file=@ranger-policies-tags-PII_EXPIRES.json' \
               "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=tag"
 	      
    
