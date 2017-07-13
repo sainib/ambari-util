@@ -238,6 +238,13 @@ sleep 5
               "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=kafka"
     sleep 40    
     
+     ${ranger_curl} -X POST \
+    -H "Content-Type: multipart/form-data" \
+    -H "Content-Type: application/json" \
+    -F 'file=@ranger-policies-tags.json' \
+              "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=tag"
+	      
+   
     cd ~/masterclass/ranger-atlas/HortoniaMunichSetup
     ./01-atlas-import-classification.sh
     ./02-atlas-import-entities.sh
