@@ -235,6 +235,8 @@ sleep 5
               "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=kafka"
     sleep 40    
     
+    ## Import Tags
+    
      ${ranger_curl} -X POST \
     -H "Content-Type: multipart/form-data" \
     -H "Content-Type: application/json" \
