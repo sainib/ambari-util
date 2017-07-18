@@ -23,8 +23,7 @@ bash master-worker-0.sh
 ------------------------------------------------
 ## Setup SSH nodes - NON-Ambari Nodes only
 
-### Copy the ssh keys FROM ambari server nodes (AS PART OF THE OUTPUT OF PREVIOUS STEP) TO all other nodes
-### Copy the content of the file ~/.ssh/id_rsa.pub from AMABRI SERVER 
+### Copy the content of the file ~/.ssh/id_rsa.pub from AMABRI SERVER - shown in previous output
 ```
 ### Paste that content into this file on all nodes
 vi ~/.ssh/authorized_keys
