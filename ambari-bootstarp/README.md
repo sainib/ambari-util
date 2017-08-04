@@ -93,7 +93,9 @@ bash run_command.sh 'cat /etc/selinux/config'
 ```
 
 ------------------------------------------------
-
+```
+TBD - Add notes to reset the mysql root password and use that for Ranger Audit Password
+```
 
 
 ##Start the Ambari yum install
