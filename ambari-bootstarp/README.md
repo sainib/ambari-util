@@ -115,3 +115,15 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0
 ```
 ambari-server start
 ```
+
+
+## Install HDP
+
+
+## Environment Setup
+```
+sudo -u hdfs hdfs dfs -mkdir /user/admin
+sudo -u hdfs hdfs dfs -chmod 755 /user/admin
+sudo -u hdfs hdfs dfs -chown admin:hdfs /user/admin
+```
+
