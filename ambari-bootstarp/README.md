@@ -98,7 +98,10 @@ TBD - Add notes to reset the mysql root password and use that for Ranger Audit P
 ```
 
 
-##Start the Ambari yum install
+
+
+
+## Start the Ambari yum install
 ```
 wget -nv <Ambari-Repo-URL> -O /etc/yum.repos.d/ambari.repo
 yum repolist
@@ -106,9 +109,19 @@ yum -y install ambari-server
 ambari-server setup
 ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
 ```
-HDP 2.6 
+
+## Ambari 2.5.1.0
 ```
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+```
+
+
+## HDF Management Pack 
+```
+ambari-server stop
+wget -nv http://public-repo-1.hortonworks.com/HDF/centos6/3.x/updates/3.0.1.1/tars/hdf_ambari_mp/hdf-ambari-mpack-3.0.1.1-5.tar.gz -O /tmp/hdf-ambari-mpack-3.0.1.1-5.tar.gz
+ambari-server install-mpack --mpack=/tmp/hdf-ambari-mpack-3.0.1.1-5.tar.gz --verbose
+ambari-server start
 ```
 
 ## Start Ambari Server
