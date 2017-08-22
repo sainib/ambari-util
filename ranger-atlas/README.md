@@ -38,7 +38,7 @@ source ~/ambari-bootstrap/extras/ambari_functions.sh
 
 ###### ALSO RUN THIS SCRIPT ON THE HOST THAT HAS RANGER ADMIN AND RANGER USERSYNC !!!!!
 cd ~/install/
-bash copy_file.sh /root/masterclass/ranger-atlas/HortoniaMunichSetup/04-create-os-users.sh /tmp
+bash copy_file.sh /root/ambari-util/ranger-atlas/HortoniaMunichSetup/04-create-os-users.sh /tmp
 bash run_command.sh 'bash /tmp/04-create-os-users.sh'
 cd -
 
