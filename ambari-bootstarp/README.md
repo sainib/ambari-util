@@ -148,7 +148,7 @@ FLUSH PRIVILEGES;
 * Add Ranger via Ambari URL 
 * Provide the details of the dbadmin creds
 * Use the following details for the Ranger Audit 
-<img src="" />
+<img src="https://github.com/sainib/ambari-util/blob/master/ambari-bootstarp/Ranger_Audit.png" />
 
 
 
