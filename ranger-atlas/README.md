@@ -96,9 +96,7 @@ curl -u admin:admin -H "X-Requested-By: blah" -X POST -d '{"MemberInfo/user_name
 
 
 cd ~
-sleep 20
 source ~/ambari-bootstrap/extras/ambari_functions.sh
-sleep 30
 host=$(hostname -f)
         
 #add groups to Hive view
