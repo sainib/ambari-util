@@ -246,7 +246,18 @@ cd ~/ambari-util/ranger-atlas/HortoniaMunichSetup
 		
 cd ~/ambari-util/ranger-atlas/HortoniaMunichSetup
 su hdfs -c ./05-create-hdfs-user-folders.sh
-su hdfs -c ./06-copy-data-to-hdfs.sh
+
+cp -R ./data /tmp/atdata
+chmod -R 777 /tmp/atdata
+sudo -u hdfs hdfs dfs -put /tmp/atdata/claims_provider_summary_data.csv /hive_data/claim/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/claim-savings.csv                /hive_data/cost_savings/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/tax_2009.csv                     /hive_data/finance/tax_2009/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/tax_2010.csv                     /hive_data/finance/tax_2010/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/tax_2015.csv                     /hive_data/finance/tax_2015/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/eu_countries.csv                 /hive_data/hortoniabank/eu_countries/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/us_customers_data.csv            /hive_data/hortoniabank/us_customers/
+sudo -u hdfs hdfs dfs -put /tmp/atdata/ww_customers_data.csv            /hive_data/hortoniabank/ww_customers/
+
 
 sleep 20
 
