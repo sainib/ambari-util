@@ -132,6 +132,26 @@ ambari-server start
 
 ## Install HDP
 
+## Install Ranger 
+* Add user to the MySQL 
+```
+# MySQL Changes - Login to MySQl on Hive Server 
+
+CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY '9oNio)ex1ndL';
+GRANT ALL PRIVILEGES ON `*`.* TO 'dbadmin'@'localhost';
+CREATE USER 'dbadmin'@'%' IDENTIFIED BY '9oNio)ex1ndL';
+GRANT ALL PRIVILEGES ON `*`.* TO 'dbadmin'@'%';
+COMMIT;
+FLUSH PRIVILEGES;
+
+```
+* Add Ranger via Ambari URL 
+* Provide the details of the dbadmin creds
+* Use the following details for the Ranger Audit 
+<img src="" />
+
+
+
 
 ## Environment Setup
 ```
