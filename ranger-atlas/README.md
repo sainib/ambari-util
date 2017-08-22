@@ -238,13 +238,13 @@ sleep 40
 		  "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=tag"
 	  
 
-cd ~/masterclass/ranger-atlas/HortoniaMunichSetup
+cd ~/ambari-util/ranger-atlas/HortoniaMunichSetup
 ./01-atlas-import-classification.sh
 ./02-atlas-import-entities.sh
 ./03-update-servicedefs.sh
 
 		
-cd ~/masterclass/ranger-atlas/HortoniaMunichSetup
+cd ~/ambari-util/ranger-atlas/HortoniaMunichSetup
 su hdfs -c ./05-create-hdfs-user-folders.sh
 su hdfs -c ./06-copy-data-to-hdfs.sh
 
