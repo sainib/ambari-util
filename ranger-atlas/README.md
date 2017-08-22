@@ -22,13 +22,7 @@ cd ~
 git clone https://github.com/sainib/masterclass  
 git clone https://github.com/sainib/ambari-bootstrap.git
 
-source ~/ambari-bootstrap/extras/ambari_functions.sh
-
-
-
-
-cd ~/masterclass/ranger-atlas/HortoniaMunichSetup
-./04-create-os-users.sh    
+source ~/ambari-bootstrap/extras/ambari_functions.sh  
 
 
 ###### ALSO RUN THIS SCRIPT ON THE HOST THAT HAS RANGER ADMIN AND RANGER USERSYNC !!!!!
