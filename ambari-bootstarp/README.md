@@ -133,18 +133,26 @@ ambari-server start
 ## Install HDP
 
 ## Install Ranger 
+
 * Add user to the MySQL 
+
 ```
 # MySQL Changes - Login to MySQl on Hive Server 
 
-CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY '9oNio)ex1ndL';
-GRANT ALL PRIVILEGES ON `*`.* TO 'dbadmin'@'localhost';
-CREATE USER 'dbadmin'@'%' IDENTIFIED BY '9oNio)ex1ndL';
-GRANT ALL PRIVILEGES ON `*`.* TO 'dbadmin'@'%';
-COMMIT;
-FLUSH PRIVILEGES;
+CREATE USER 'druid'@'%' IDENTIFIED BY '9oNio)ex1ndL';
+CREATE USER 'superset'@'%' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE DATABASE druid DEFAULT CHARACTER SET utf8;
+CREATE DATABASE superset DEFAULT CHARACTER SET utf8;
+
+GRANT ALL PRIVILEGES ON *.* TO 'druid'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'superset'@'%' WITH GRANT OPTION;
 
 ```
+* Run the following command on MySQL server to reset the password for root user. 
+/usr/bin/mysql_secure_installation
+
+* Update the Ranger Admin info with the dbadmin password as the root and the set password. 
 * Add Ranger via Ambari URL 
 * Provide the details of the dbadmin creds
 * Use the following details for the Ranger Audit 
