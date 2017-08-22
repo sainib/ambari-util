@@ -42,12 +42,13 @@ bash copy_file.sh /root/ambari-util/ranger-atlas/HortoniaMunichSetup/04-create-o
 bash run_command.sh 'bash /tmp/04-create-os-users.sh'
 cd -
 
+
+
+
+########################################################################
 #TODO - Restart UserSync so the new groups and users are imported into the ranger env
-
-
 ########################################################################
-########################################################################
-## 
+
 
 ## Ambari Server specific tasks
 
@@ -100,13 +101,9 @@ curl -u ${ambari_uid}:${ambari_password} -H "X-Requested-By: blah" -X POST -d '{
         
 ## add admin user to postgres for other services, such as Ranger
 
-
-
 cd ~
 source ~/ambari-bootstrap/extras/ambari_functions.sh
 host=$(hostname -f)
-
-
 
 #add groups to Hive view
 curl -u ${ambari_uid}:${ambari_pass} -i -H "X-Requested-By: blah" -X PUT ${ambari_url}/views/HIVE/versions/1.5.0/instances/AUTO_HIVE_INSTANCE/privileges \
@@ -116,8 +113,10 @@ curl -u ${ambari_uid}:${ambari_pass} -i -H "X-Requested-By: blah" -X PUT ${ambar
 ## update zeppelin notebooks
 curl -sSL https://raw.githubusercontent.com/hortonworks-gallery/zeppelin-notebooks/master/update_all_notebooks.sh | sudo -E sh 
 
-### RESTART ATLAS Using Ambari
 
+########################################################################
+# RESTART ATLAS & Kafka Using Ambari
+########################################################################
 
 #update zeppelin configs by uncommenting admin user, enabling sessionManager/securityManager, switching from anon to authc
 
@@ -192,9 +191,9 @@ sleep 10
 cd ~/masterclass/ranger-atlas/Scripts/
 
 
-#### TODO 
+########################################################################
 # - Create the clusterName_hive, hadoop adn kafka policy.. 
-
+########################################################################
 
 ## import ranger Hive policies for masking etc - needs to be done before creating HDFS folders
 
@@ -225,9 +224,10 @@ ${ranger_curl} -X POST \
 		  "${ranger_url}/plugins/policies/importPoliciesFromFile?isOverride=true&serviceType=kafka"
 sleep 40    
 
-# 
+
+########################################################################
 ### Manually Create a new service for tag based policies with any service name 
-# 
+########################################################################
 
 ## Import Tags
 
