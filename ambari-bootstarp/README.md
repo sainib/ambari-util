@@ -179,7 +179,7 @@ sudo ambari-server setup --jdbc-db=mysql \
 yum localinstall \
 https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
-yum install mysql-community-server
+yum -y install mysql-community-server
 
 systemctl start mysqld.service
 
