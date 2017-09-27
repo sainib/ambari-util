@@ -146,11 +146,11 @@ ambari-server start
 ## Install MySQL for SchemaRegistry and SAM, Update MySQL Password & create users 
 
 ```
-yum install mysql-connector-java.noarch
+yum -y install mysql-connector-java.noarch
 sudo ambari-server setup --jdbc-db=mysql \
 --jdbc-driver=/usr/share/java/mysql-connector-java.jar 
 
-yum localinstall \
+yum -y localinstall \
 https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
 yum -y install mysql-community-server
