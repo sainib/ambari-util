@@ -44,6 +44,8 @@ ssh <node-name>
 ------------------------------------------------
 
 ```
+cd ~/install
+echo `hostname -f` > Hostdetail.txt
 
 ##---Execute the following steps manually -----
 vi Hostdetail.txt
