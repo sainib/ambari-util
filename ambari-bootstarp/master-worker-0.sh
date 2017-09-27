@@ -1,5 +1,8 @@
 #!/bin/sh
 
+yum -y update
+yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients
+
 cd 
 mkdir install 
 cd ~/install
@@ -9,9 +12,6 @@ unzip tools.zip
 cp ./tools/* .
 rm -rf __MACOSX/ tools
 
-
-yum -y update
-yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients
 echo ""
 echo "1 - Creating SSH Key on Master"
 
