@@ -44,10 +44,6 @@ ssh <node-name>
 ------------------------------------------------
 
 ```
-cd 
-mkdir install 
-cd ~/install
-cp /root/ambari-util/ambari-bootstarp/* . 
 
 ##---Execute the following steps manually -----
 vi Hostdetail.txt
@@ -57,10 +53,6 @@ server2
 
 bash createHostsFile.sh
 
-##---Execute the following steps manually -----
-unzip tools.zip
-cp ./tools/* .
-rm -rf __MACOSX/ tools
 ```
 
 ------------------------------------------------
