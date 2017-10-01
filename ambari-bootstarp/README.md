@@ -62,6 +62,8 @@ bash createHostsFile.sh
 ## Run the following on ambari node
 --- Run using run_command.sh 
 ```
+bash run_command.sh 'hostname -f'
+
 cd ~/install
 
 bash worker-overall.sh
