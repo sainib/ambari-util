@@ -106,7 +106,25 @@ ambari-server start
 * Add user to the MySQL 
 
 ```
-# MySQL Changes - Login to MySQl on Hive Server 
+# ON DRUID BOX ONLY - 
+
+yum -y install mysql-connector-java.noarch
+
+yum -y localinstall \
+https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+
+yum -y install mysql-community-server
+
+systemctl start mysqld.service
+
+grep 'A temporary password is generated for root@localhost' \
+/var/log/mysqld.log |tail -1
+
+/usr/bin/mysql_secure_installation
+Change the root user password.. and use that as dba admin 
+
+mysql -u root -p
+
 
 CREATE USER 'druid'@'%' IDENTIFIED BY '9oNio)ex1ndL';
 CREATE USER 'superset'@'%' IDENTIFIED BY '9oNio)ex1ndL';
@@ -116,7 +134,9 @@ CREATE DATABASE superset DEFAULT CHARACTER SET utf8;
 
 GRANT ALL PRIVILEGES ON *.* TO 'druid'@'%' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'superset'@'%' WITH GRANT OPTION;
+commit;
 
+FLUSH PRIVILEGES;
 ```
 * Run the following command on MySQL server to reset the password for root user. 
 /usr/bin/mysql_secure_installation
