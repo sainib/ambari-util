@@ -115,6 +115,11 @@ https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
 yum -y install mysql-community-server
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Edit /etc/my.cnf and add the line below 
+bind-address = 0.0.0.0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 systemctl start mysqld.service
 
 grep 'A temporary password is generated for root@localhost' \
