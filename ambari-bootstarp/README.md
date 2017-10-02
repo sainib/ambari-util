@@ -101,10 +101,7 @@ ambari-server start
 
 ## Install HDP
 
-## Install Ranger 
-
-* Add user to the MySQL 
-
+## Configrue MySQL For Druid 
 ```
 # ON DRUID BOX ONLY - 
 
@@ -143,6 +140,18 @@ commit;
 
 FLUSH PRIVILEGES;
 ```
+
+## Install Ranger 
+
+Install Ranger on same host as Hive or Druid metastore, so we can reuse MySQL 
+
+```
+No need to pre-create uses for Ranger as those can be created by the root use via Ambari. just suppy the root password. 
+```
+
+* Add user to the MySQL 
+
+
 * Run the following command on MySQL server to reset the password for root user. 
 /usr/bin/mysql_secure_installation
 
