@@ -3,11 +3,10 @@
 Need to clean up the process below.. Some ToDos are listed and also convert the process into an automated script 
 
 Also - Now that I have moved the setup stuff under the ambari-util - the some of teh paths below will chage. 
-<img src="https://github.com/sainib/ambari-util/blob/master/ambari-bootstarp/Ranger_Audit.png" />
+
 ```
 
-
-
+Run these commands on Ambari Server .. 
 
 1. Set property atlas.feature.taxonomy.enable to true in Atlas under "Custom application-properties" section 
 
@@ -194,11 +193,17 @@ sleep 10
 
 cd ~/masterclass/ranger-atlas/Scripts/
 
+```
 
-########################################################################
-# - Create the clusterName_hive, hadoop adn kafka policy.. 
-########################################################################
+For this next part, use Ambari ..
 
+* Create the clusterName_hive, hadoop adn kafka policy.. 
+- To turn on the Ranger plugin, 
+<img src="https://github.com/sainib/ambari-util/blob/master/ranger-atlas/media/Screen%20Shot%202017-10-04%20at%205.16.54%20PM.png" />
+
+After that is done, back to command line - 
+
+```
 ## import ranger Hive policies for masking etc - needs to be done before creating HDFS folders
 
 < ranger-policies-enabled.json jq '.policies[].service = "'${cluster_name}'_hive"' > ranger-policies-apply.json
