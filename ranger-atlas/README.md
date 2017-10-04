@@ -32,6 +32,7 @@ cp jq /usr/bin
 cd ~
 git clone https://github.com/sainib/masterclass  
 git clone https://github.com/sainib/ambari-bootstrap.git
+git clone https://github.com/sainib/ambari-util.git
 
 source ~/ambari-bootstrap/extras/ambari_functions.sh  
 
