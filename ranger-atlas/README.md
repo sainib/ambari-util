@@ -21,6 +21,7 @@ ambari_url="http://${ambari_host}:8080/api/v1"
 ambari_pass="admin"
 ranger_host=localhost
 hive_host=localhost
+zeppelin_host=ZEPPELIN_HOST
 
 3. Run the following commands 
 
@@ -150,7 +151,7 @@ sleep 5
       {
          \"service_name\":\"ZEPPELIN\",
          \"component_name\":\"ZEPPELIN_MASTER\",
-         \"hosts\":\"${host}\"
+         \"hosts\":\"${zeppelin_host}\"
       }
    ]
 }" ${ambari_url}/clusters/${cluster_name}/requests  
