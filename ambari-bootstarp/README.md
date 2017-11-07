@@ -98,8 +98,13 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.2.0
 ambari-server start
 ```
 
-
 ## Install HDP
+
+## Change configs
+```
+Change all the passwords and also proxy config in HDFS, YARN, 
+
+
 
 ## Configrue MySQL For Druid 
 ```
