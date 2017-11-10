@@ -143,8 +143,40 @@ GRANT ALL PRIVILEGES ON *.* TO 'druid'@'%' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'superset'@'%' WITH GRANT OPTION;
 commit;
 
+
+CREATE USER 'druid'@'127.0.0.1' IDENTIFIED BY '9oNio)ex1ndL';
+CREATE USER 'superset'@'127.0.0.1' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'druid'@'birens-hdp2' IDENTIFIED BY '9oNio)ex1ndL';
+CREATE USER 'superset'@'birens-hdp2' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'druid'@'SERVER' IDENTIFIED BY '9oNio)ex1ndL';
+CREATE USER 'superset'@'SERVER' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'druid'@'localhost' IDENTIFIED BY '9oNio)ex1ndL';
+CREATE USER 'superset'@'localhost' IDENTIFIED BY '9oNio)ex1ndL';
+
+GRANT ALL PRIVILEGES ON *.* TO 'druid'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'superset'@'%' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'druid'@'birens-hdp2' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'superset'@'birens-hdp2' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'druid'@'SERVER' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'superset'@'SERVER' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'druid'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'superset'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'root'@'SERVER' IDENTIFIED BY '9oNio)ex1ndL';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'SERVER' WITH GRANT OPTION;
+
+commit;
+
 FLUSH PRIVILEGES;
 ```
+
+
 
 ## Install Ranger 
 
