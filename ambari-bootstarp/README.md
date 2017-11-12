@@ -99,17 +99,32 @@ ambari-server start
 ```
 
 ## Install HDP
+* Install wih 4 masters and 4 workers
+* For masters, do the following 
+  * Master 1 = Namennode etc
+  * Master 2 = Hive and all hive related components 
+  * Master 3 = Grafana, Metric etc (Keep it light, will be used for DRUID) 
+  * Master 4 = Spark and Spark2 (Keep it light, will be used for Ranger) 
+  
 
-## Change configs
+## Change configs, Complete install and Start Services. 
 ```
 Change all the passwords and also proxy config in HDFS, YARN, 
+```
 
 
+## Environment Setup
+```
+sudo -u hdfs hdfs dfs -mkdir /user/admin
+sudo -u hdfs hdfs dfs -chmod 755 /user/admin
+sudo -u hdfs hdfs dfs -chown admin:hdfs /user/admin
+```
 
 ## Configrue MySQL For Druid 
-```
+
 # ON DRUID BOX ONLY - 
 
+```
 yum -y install mysql-connector-java.noarch
 
 yum -y localinstall \
@@ -182,19 +197,57 @@ commit;
 
 FLUSH PRIVILEGES;
 
-```
 
+```
 
 
 ## Install Ranger 
 
-Install Ranger on same host as Hive or Druid metastore, so we can reuse MySQL 
+Install Ranger on host different than the one that has Hive or Druid metastore
 
 ```
 No need to pre-create uses for Ranger as those can be created by the root use via Ambari. just suppy the root password. 
+However, we need to install MySQl and reset the root password 
+
+```
+yum -y install mysql-connector-java.noarch
+
+yum -y localinstall \
+https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+
+yum -y install mysql-community-server
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Edit /etc/my.cnf and add the line below 
+bind-address = 0.0.0.0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+systemctl start mysqld.service
+
+grep 'A temporary password is generated for root@localhost' \
+/var/log/mysqld.log |tail -1
+
+/usr/bin/mysql_secure_installation
+Change the root user password.. and use that as dba admin 
+
+mysql -u root -p
+
+CREATE USER 'root'@'SERVER.DOMAIN.COM' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'SERVER.DOMAIN.COM' WITH GRANT OPTION;
+
+commit;
+
+FLUSH PRIVILEGES;
+
+
 ```
 
-* Add user to the MySQL 
+
+```
+
+
+------------------------------------------------
 
 
 * Run the following command on MySQL server to reset the password for root user. 
@@ -206,15 +259,11 @@ No need to pre-create uses for Ranger as those can be created by the root use vi
 * Use the following details for the Ranger Audit - https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.1/bk_security/content/manually_updating_ambari_solr_audit_settings.html
 <img src="https://github.com/sainib/ambari-util/blob/master/ambari-bootstarp/Ranger_Audit.png" />
 
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
 
 
-
-## Environment Setup
-```
-sudo -u hdfs hdfs dfs -mkdir /user/admin
-sudo -u hdfs hdfs dfs -chmod 755 /user/admin
-sudo -u hdfs hdfs dfs -chown admin:hdfs /user/admin
-```
 
 # HDF Setup 
 
@@ -230,6 +279,7 @@ ambari-server start
 
 ```
 yum -y install mysql-connector-java.noarch
+
 sudo ambari-server setup --jdbc-db=mysql \
 --jdbc-driver=/usr/share/java/mysql-connector-java.jar 
 
@@ -237,6 +287,11 @@ yum -y localinstall \
 https://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
 yum -y install mysql-community-server
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Edit /etc/my.cnf and add the line below 
+bind-address = 0.0.0.0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 systemctl start mysqld.service
 
@@ -246,20 +301,57 @@ grep 'A temporary password is generated for root@localhost' \
 /usr/bin/mysql_secure_installation
 Change the root user password.. and use that as dba admin 
 
-
 mysql -u root -p
 
-#### mysql 
-CREATE USER 'registry'@'%' IDENTIFIED BY '9oNio)ex1ndL';
-CREATE DATABASE registry DEFAULT CHARACTER SET utf8;
-GRANT ALL PRIVILEGES ON *.* TO 'registry'@'%' WITH GRANT OPTION;
+CREATE USER 'registry'@'%' IDENTIFIED BY '9oNio)ex1ndL'; CREATE USER 'streamline'@'%' IDENTIFIED BY '9oNio)ex1ndL';
 
+CREATE DATABASE registry DEFAULT CHARACTER SET utf8; CREATE DATABASE streamline DEFAULT CHARACTER SET utf8;
 
-CREATE USER 'streamline'@'%' IDENTIFIED BY '9oNio)ex1ndL';
-CREATE DATABASE streamline DEFAULT CHARACTER SET utf8;
+GRANT ALL PRIVILEGES ON *.* TO 'registry'@'%' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'%' WITH GRANT OPTION; 
+
+commit;
+
+CREATE USER 'registry'@'127.0.0.1' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'127.0.0.1' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'registry'@'SERVER' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'SERVER' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'registry'@'SERVER.DOMAIN.COM' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'SERVER.DOMAIN.COM' IDENTIFIED BY '9oNio)ex1ndL';
+
+CREATE USER 'registry'@'localhost' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'localhost' IDENTIFIED BY '9oNio)ex1ndL';
+
+GRANT ALL PRIVILEGES ON *.* TO 'registry'@'%' WITH GRANT OPTION; 
+
 GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'%' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'registry'@'SERVER' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'SERVER' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'registry'@'SERVER.DOMAIN.COM' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'SERVER.DOMAIN.COM' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'registry'@'localhost' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'root'@'SERVER.DOMAIN.COM' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'SERVER.DOMAIN.COM' WITH GRANT OPTION;
 
 commit;
 
 FLUSH PRIVILEGES;
+
+
 ```
