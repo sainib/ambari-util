@@ -206,10 +206,9 @@ FLUSH PRIVILEGES;
 Install Ranger on host different than the one that has Hive or Druid metastore
 
 ```
-No need to pre-create uses for Ranger as those can be created by the root use via Ambari. just suppy the root password. 
-However, we need to install MySQl and reset the root password 
+* No need to pre-create uses for Ranger as those can be created by the root use via Ambari. just suppy the root password. 
+* However, we need to install MySQl and reset the root password 
 
-```
 yum -y install mysql-connector-java.noarch
 
 yum -y localinstall \
