@@ -109,7 +109,12 @@ ambari-server start
 
 ## Change configs, Complete install and Start Services. 
 ```
-Change all the passwords and also proxy config in HDFS, YARN, 
+******************
+** PROXY CHANGE **
+******************
+
+Change all the passwords and also proxy config in HDFS (4), YARN (1), Hive (1)
+
 ```
 
 
