@@ -82,7 +82,10 @@ wget -nv <Ambari-Repo-URL> -O /etc/yum.repos.d/ambari.repo
 yum repolist
 yum -y install ambari-server
 ambari-server setup
-ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/install/mysql-connector-java.jar
+
+yum -y install mysql-connector-java.noarch
+sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar 
+
 ```
 
 ## Ambari 2.5.1.0
