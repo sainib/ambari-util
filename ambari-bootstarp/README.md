@@ -140,6 +140,7 @@ yum -y install mysql-community-server
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Edit /etc/my.cnf and add the line below 
 bind-address = 0.0.0.0
+show_compatibility_56 = on
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 systemctl start mysqld.service
