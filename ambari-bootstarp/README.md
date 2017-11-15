@@ -2,7 +2,7 @@
 
 # Overview 
 
-## Run the following on ALL nodes 
+## Run the following on AMBARI NODE ONLY
 ### This step will install git and get the code. 
 ------------------------------------------------
 ```
@@ -16,7 +16,9 @@ git clone https://github.com/sainib/ambari-util.git
 
 cd /root/ambari-util/ambari-bootstarp
 
-bash master-worker-0.sh
+bash master-0.sh
+
+
 ```
 ------------------------------------------------
 
