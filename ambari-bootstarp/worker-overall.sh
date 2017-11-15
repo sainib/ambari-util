@@ -1,6 +1,7 @@
 #/bin/sh
 
 bash run_command.sh 'ifconfig'  | grep broadcast | grep netmask
+bash run_command.sh 'yum -y update'
 bash run_command.sh 'yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients'
 bash run_command.sh 'systemctl is-enabled ntpd'
 bash run_command.sh 'systemctl enable ntpd'
