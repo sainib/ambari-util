@@ -128,6 +128,11 @@ Change all the passwords and also proxy config in HDFS (4), YARN (1), Hive (1)
 sudo -u hdfs hdfs dfs -mkdir /user/admin
 sudo -u hdfs hdfs dfs -chmod 755 /user/admin
 sudo -u hdfs hdfs dfs -chown admin:hdfs /user/admin
+
+sudo -u hdfs hdfs dfs -mkdir /user/root
+sudo -u hdfs hdfs dfs -chmod 755 /user/root
+sudo -u hdfs hdfs dfs -chown root:hdfs /user/root
+
 ```
 
 ## Configrue MySQL For Druid 
