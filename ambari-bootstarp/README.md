@@ -279,6 +279,11 @@ FLUSH PRIVILEGES;
 
 # HDF Setup 
 
+## JUST NIFI 
+```
+wget https://s3.amazonaws.com/public-repo-1.hortonworks.com/HDF/3.0.2.0/nifi-1.2.0.3.0.2.0-76-bin.zip
+```
+
 ## HDF Management Pack 
 ```
 ambari-server stop
