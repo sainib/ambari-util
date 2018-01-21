@@ -27,8 +27,11 @@ bash master-0.sh
 
 ### Copy the content of the file ~/.ssh/id_rsa.pub from AMABRI SERVER - shown in previous output
 ```
-### Paste that content into this file on all nodes
-vi ~/.ssh/authorized_keys
+### SSH into all other nodes and run these commands 
+sudo su
+echo "---PUBLIC KEY ----" >> ~/.ssh/authorized_keys
+exit
+exit
 
 ```
 
