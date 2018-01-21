@@ -105,7 +105,15 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.0
 ambari-server start
 ```
 
-## Install HDP
+## OPTION 1 ::  Install HDP
+```
+cd ./blueprint/
+bash deregister-blueprint.sh
+bash register-blueprint.sh
+bash provision-cluster.sh
+```
+
+## OPTION 2 :: Install HDP
 * Install wih 4 masters and 4 workers
 * For masters, do the following 
   * Master 1 = Namennode etc
