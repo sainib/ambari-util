@@ -6,7 +6,7 @@ yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients
 cd 
 mkdir install 
 cd ~/install
-cp -R /root/ambari-util/ambari-bootstarp/ . 
+cp -R /root/ambari-util/ambari-bootstarp/* . 
 ##---Execute the following steps manually -----
 unzip tools.zip
 cp ./tools/* .
