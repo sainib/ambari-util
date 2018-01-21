@@ -81,25 +81,27 @@ TBD - Add notes to reset the mysql root password and use that for Ranger Audit P
 ```
 
 
+## Get Ambari Repo File 
+```
+* Ambari 2.5.1
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+* Ambari 2.5.2
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+* Ambari 2.6.0
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.0.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+* Ambari 2.6.1
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+
+```
+
 ## Start the Ambari yum install
 ```
-wget -nv <Ambari-Repo-URL> -O /etc/yum.repos.d/ambari.repo
 yum repolist
 yum -y install ambari-server
 ambari-server setup
 
 yum -y install mysql-connector-java.noarch
 sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar 
-
-```
-
-## Ambari 2.5.1.0
-```
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
-
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
-
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 
 ```
 
@@ -110,6 +112,11 @@ ambari-server start
 
 ## OPTION 1 ::  Install HDP
 ```
+bash run_command.sh "wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.0.0/ambari.repo -O /etc/yum.repos.d/ambari.repo"
+bash run_command.sh "yum -y install ambari-agent"
+bash run_command.sh "sed -i 's/hostname\=localhost/hostname\=birens0.field.hortonworks.com/g' /etc/ambari-agent/conf/ambari-agent.ini"
+bash run_command.sh "ambari-agent start"
+
 cd ./blueprint/
 bash deregister-blueprint.sh
 bash register-blueprint.sh
