@@ -1,0 +1,55 @@
+{
+  "blueprint" : "8node-blueprint.json",
+  "host_groups" :[
+    {
+      "name" : "host_group_1", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens0.field.hortonworks.com"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_2", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens1.field.hortonworks.com"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_3", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens2.field.hortonworks.com"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_4", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens3.field.hortonworks.com"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_5", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens4.field.hortonworks.com",
+          "fqdn" : "birens5.field.hortonworks.com",
+          "fqdn" : "birens6.field.hortonworks.com"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_6", 
+      "hosts" : [         
+        {
+          "fqdn" : "birens7.field.hortonworks.com",
+        }
+      ]
+    }
+  ]
+}
