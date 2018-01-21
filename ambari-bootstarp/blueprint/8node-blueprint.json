@@ -11,20 +11,6 @@
       }
     },
     {
-      "streamline-env" : {
-        "properties_attributes" : { },
-        "properties" : {
-          "streamline_pid_dir" : "/var/run/streamline",
-          "streamline_user_nproc_limit" : "65536",
-          "streamline_principal_name" : "streamline",
-          "streamline_user" : "streamline",
-          "streamline_user_nofile_limit" : "65536",
-          "streamline_log_dir" : "/var/log/streamline",
-          "content" : "\n#!/bin/bash\n\n# Set STREAMLINE specific environment variables here.\n\n# The java implementation to use.\nexport JAVA_HOME={{java64_home}}\nexport PATH=$PATH:$JAVA_HOME/bin\nexport PID_DIR={{streamline_pid_dir}}\nexport LOG_DIR={{streamline_log_dir}}\nexport STREAMLINE_KERBEROS_PARAMS={{streamline_kerberos_params}}"
-        }
-      }
-    },
-    {
       "druid-broker" : {
         "properties_attributes" : { },
         "properties" : {
@@ -73,30 +59,6 @@
           "hive2_log_maxfilesize" : "256",
           "hive2_log_maxbackupindex" : "30",
           "content" : "\n# Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor license agreements.  See the NOTICE file\n# distributed with this work for additional information\n# regarding copyright ownership.  The ASF licenses this file\n# to you under the Apache License, Version 2.0 (the\n# \"License\"); you may not use this file except in compliance\n# with the License.  You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n\nstatus = INFO\nname = HiveLog4j2\npackages = org.apache.hadoop.hive.ql.log\n\n# list of properties\nproperty.hive.log.level = {{hive_log_level}}\nproperty.hive.root.logger = DRFA\nproperty.hive.log.dir = ${sys:java.io.tmpdir}/${sys:user.name}\nproperty.hive.log.file = hive.log\nproperty.hive.perflogger.log.level = INFO\n\n# list of all appenders\nappenders = console, DRFA\n\n# console appender\nappender.console.type = Console\nappender.console.name = console\nappender.console.target = SYSTEM_ERR\nappender.console.layout.type = PatternLayout\nappender.console.layout.pattern = %d{ISO8601} %5p [%t] %c{2}: %m%n\n\n# daily rolling file appender\nappender.DRFA.type = RollingRandomAccessFile\nappender.DRFA.name = DRFA\nappender.DRFA.fileName = ${sys:hive.log.dir}/${sys:hive.log.file}\n# Use %pid in the filePattern to append process-id@host-name to the filename if you want separate log files for different CLI session\nappender.DRFA.filePattern = ${sys:hive.log.dir}/${sys:hive.log.file}.%d{yyyy-MM-dd}\nappender.DRFA.layout.type = PatternLayout\nappender.DRFA.layout.pattern = %d{ISO8601} %5p [%t] %c{2}: %m%n\nappender.DRFA.policies.type = Policies\nappender.DRFA.policies.time.type = TimeBasedTriggeringPolicy\nappender.DRFA.policies.time.interval = 1\nappender.DRFA.policies.time.modulate = true\nappender.DRFA.strategy.type = DefaultRolloverStrategy\nappender.DRFA.strategy.max = {{hive2_log_maxbackupindex}}\nappender.DRFA.policies.fsize.type = SizeBasedTriggeringPolicy\nappender.DRFA.policies.fsize.size = {{hive2_log_maxfilesize}}MB\n\n# list of all loggers\nloggers = NIOServerCnxn, ClientCnxnSocketNIO, DataNucleus, Datastore, JPOX, PerfLogger, AmazonAws, ApacheHttp\n\nlogger.NIOServerCnxn.name = org.apache.zookeeper.server.NIOServerCnxn\nlogger.NIOServerCnxn.level = WARN\n\nlogger.ClientCnxnSocketNIO.name = org.apache.zookeeper.ClientCnxnSocketNIO\nlogger.ClientCnxnSocketNIO.level = WARN\n\nlogger.DataNucleus.name = DataNucleus\nlogger.DataNucleus.level = ERROR\n\nlogger.Datastore.name = Datastore\nlogger.Datastore.level = ERROR\n\nlogger.JPOX.name = JPOX\nlogger.JPOX.level = ERROR\n\nlogger.AmazonAws.name=com.amazonaws\nlogger.AmazonAws.level = INFO\n\nlogger.ApacheHttp.name=org.apache.http\nlogger.ApacheHttp.level = INFO\n\nlogger.PerfLogger.name = org.apache.hadoop.hive.ql.log.PerfLogger\nlogger.PerfLogger.level = ${sys:hive.perflogger.log.level}\n\n# root logger\nrootLogger.level = ${sys:hive.log.level}\nrootLogger.appenderRefs = root\nrootLogger.appenderRef.root.ref = ${sys:hive.root.logger}"
-        }
-      }
-    },
-    {
-      "streamline-common" : {
-        "properties_attributes" : { },
-        "properties" : {
-          "jar.storage.type" : "local",
-          "database_name" : "streamline",
-          "streamline.storage.connector.user" : "streamline",
-          "streamline.storage.type" : "mysql",
-          "registry.url" : "http://localhost:7788/api/v1",
-          "streamline.storage.connector.connectURI" : "jdbc:mysql://birens2.field.hortonworks.com:3306/streamline",
-          "storm.client.home" : "/usr/hdf/current/storm-client",
-          "jar.storage" : "/hdf/streamline/jars",
-          "maven.repo.url" : "hwx-public^http://repo.hortonworks.com/content/groups/public/,hwx-private^http://nexus-private.hortonworks.com/nexus/content/groups/public/",
-          "jar.storage.hdfs.url" : "hdfs://localhost:9090",
-          "httpProxyServer" : "",
-          "httpProxyUsername" : "",
-          "streamline.storage.query.timeout" : "30",
-          "port" : "7777",
-          "streamline.dashboard.url" : "http://birens0.field.hortonworks.com:9088",
-          "adminPort" : "7778",
-          "topology.test.results.dir" : "/hdf/streamline/topology_test_results"
         }
       }
     },
@@ -1150,16 +1112,6 @@
       }
     },
     {
-      "streamline-log4j" : {
-        "properties_attributes" : { },
-        "properties" : {
-          "streamline_log_maxfilesize" : "256",
-          "content" : "\n # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.\n level: INFO\n # Logger-specific levels.\n loggers:\n  # Sets the level for 'com.example.app' to DEBUG.\n  com.hortonworks.streamline: INFO\n appenders:\n   - type: file\n     threshold: DEBUG\n     logFormat: \"%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n\"\n     currentLogFilename: {{streamline_log_dir}}/streamline.log\n     archivedLogFilenamePattern: {{streamline_log_dir}}/streamline-%d{yyyy-MM-dd}-%i.log.gz\n     archivedFileCount: {{streamline_log_maxbackupindex}}\n     timeZone: UTC\n     maxFileSize: {{streamline_log_maxfilesize}}",
-          "streamline_log_maxbackupindex" : "20"
-        }
-      }
-    },
-    {
       "ams-site" : {
         "properties_attributes" : { },
         "properties" : {
@@ -1262,14 +1214,6 @@
           "druid.service" : "druid/historical",
           "druid.port" : "8083",
           "druid.server.maxSize" : "300000000000"
-        }
-      }
-    },
-    {
-      "streamline_jaas_conf" : {
-        "properties_attributes" : { },
-        "properties" : {
-          "content" : "\nStreamlineServer {\ncom.sun.security.auth.module.Krb5LoginModule required\nuseKeyTab=true\nkeyTab=\"{{streamline_keytab_path}}\"\nstoreKey=true\nuseTicketCache=false\nserviceName=\"{{streamline_bare_principal}}\"\nprincipal=\"{{streamline_jaas_principal}}\";\n};\nStormClient {\ncom.sun.security.auth.module.Krb5LoginModule required\nuseKeyTab=true\nkeyTab=\"{{streamline_keytab_path}}\"\nstoreKey=true\nuseTicketCache=false\nserviceName=\"nimbus\"\nprincipal=\"{{streamline_jaas_principal}}\";\n};\nRegistryClient {\ncom.sun.security.auth.module.Krb5LoginModule required\nuseKeyTab=true\nkeyTab=\"{{streamline_keytab_path}}\"\nstoreKey=true\nuseTicketCache=false\nprincipal=\"{{streamline_jaas_principal}}\";\n};"
         }
       }
     },
@@ -3440,9 +3384,6 @@
         },
         {
           "name" : "AMBARI_SERVER"
-        },
-        {
-          "name" : "STREAMLINE_SERVER"
         },
         {
           "name" : "HBASE_CLIENT"
