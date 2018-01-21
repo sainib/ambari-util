@@ -2479,6 +2479,7 @@
           "druid.metadata.storage.connector.user" : "druid",
           "database_name" : "druid",
           "druid.discovery.curator.path" : "/druid/discovery",
+	  "druid.metadata.storage.connector.connectURI" : "jdbc:mysql://birens2.field.hortonworks.com:3306/druid",
           "druid.monitoring.monitors" : "[\"com.metamx.metrics.JvmMonitor\"]",
           "druid.zk.paths.base" : "/druid",
           "druid.metadata.storage.connector.port" : "1527",
