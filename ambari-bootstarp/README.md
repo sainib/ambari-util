@@ -112,6 +112,7 @@ ambari-server start
 
 ## OPTION 1 ::  Install HDP
 ```
+cd ~/install
 bash run_command.sh "wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.0.0/ambari.repo -O /etc/yum.repos.d/ambari.repo"
 bash run_command.sh "yum -y install ambari-agent"
 bash run_command.sh "sed -i 's/hostname\=localhost/hostname\=birens0.field.hortonworks.com/g' /etc/ambari-agent/conf/ambari-agent.ini"
