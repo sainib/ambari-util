@@ -3,6 +3,8 @@
 yum -y update
 yum install -y -q curl ntp openssl python zlib wget unzip openssh-clients
 
+setup_stack_renewal.sh
+
 cd 
 mkdir install 
 cd ~/install

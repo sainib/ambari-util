@@ -51,6 +51,35 @@ CREATE USER 'root'@'birens0.field.hortonworks.com' IDENTIFIED BY '9oNio)ex1ndL';
 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'birens0.field.hortonworks.com' WITH GRANT OPTION;
 
+#-------------------------
+
+CREATE USER 'streamline'@'%' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE DATABASE streamline DEFAULT CHARACTER SET utf8; 
+
+CREATE USER 'streamline'@'127.0.0.1' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'birens0' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'birens0.field.hortonworks.com' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+CREATE USER 'streamline'@'localhost' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'%' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'birens0' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'birens0.field.hortonworks.com' WITH GRANT OPTION; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'streamline'@'localhost' WITH GRANT OPTION; 
+
+CREATE USER 'root'@'birens0.field.hortonworks.com' IDENTIFIED BY '9oNio)ex1ndL'; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'birens0.field.hortonworks.com' WITH GRANT OPTION;
+
+
+#-------------------------
+
 commit;
 
 FLUSH PRIVILEGES;
