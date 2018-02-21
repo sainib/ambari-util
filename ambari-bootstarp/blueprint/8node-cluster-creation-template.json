@@ -1,5 +1,5 @@
 {
-  "blueprint" : "openstack_8node_cluster",
+  "blueprint" : "secloud-openstack-8node",
   "default_password": "admin",
   "host_groups" :[
     {
