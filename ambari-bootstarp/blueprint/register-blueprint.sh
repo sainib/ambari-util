@@ -5,8 +5,8 @@ if [ $# -lt 1 ]; then
 	exit 1
 fi
 fn=$1
-if [  -f "$fn" ] ; then
-                echo "ERROR: File already exists. We dont want to overwrite the existing file, do we?"
+if [ !  -f "$fn" ] ; then
+                echo "ERROR: Blueprint file does not exist. Provide a file that exists"
                 exit 1
 fi 
 
