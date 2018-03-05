@@ -91,6 +91,8 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.2.0
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.0.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 * Ambari 2.6.1
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+* Ambari 2.6.1.3 
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.3/ambari.repo -O /etc/yum.repos.d/ambari.repo
 
 ```
 
