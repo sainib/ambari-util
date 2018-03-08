@@ -26,6 +26,6 @@ cd ~/.ssh
 
 echo ""
 echo ""
-cat id_rsa.pub
+cat ~/.ssh/id_rsa.pub
 echo ""
 echo ""
