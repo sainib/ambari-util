@@ -305,6 +305,8 @@ FLUSH PRIVILEGES;
 ## JUST NIFI 
 ```
 wget https://s3.amazonaws.com/public-repo-1.hortonworks.com/HDF/3.0.2.0/nifi-1.2.0.3.0.2.0-76-bin.zip
+
+wget https://public-repo-1.hortonworks.com/HDF/3.1.1.0/nifi-1.5.0.3.1.1.0-35-bin.tar.gz
 ```
 
 ## HDF Management Pack 
