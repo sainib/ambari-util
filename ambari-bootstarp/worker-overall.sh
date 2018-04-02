@@ -27,3 +27,9 @@ bash run_command.sh 'yum install -y -q epel-release'
 bash run_command.sh 'yum install -y -q python-pip'
 bash run_command.sh 'pip install --upgrade pip'
 bash run_command.sh 'pip install numpy'
+
+bash run_command.sh "yum-complete-transaction -y"
+
+bash run_command.sh 'wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm'
+bash run_command.sh 'sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm'
+bash run_command.sh 'yum update'
