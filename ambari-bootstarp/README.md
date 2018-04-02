@@ -134,6 +134,14 @@ bash provision-cluster.sh
   * Master 3 = Grafana, Metric etc (Keep it light, will be used for DRUID) 
   * Master 4 = Spark and Spark2 (Keep it light, will be used for Ranger) 
   
+  
+IMPORTANT - Install MySQL yourself on the Hive, Druid, Ranger and SuperSet servers (or server if its same for all servcies) 
+``` 
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum update
+```
+
 
 ## Change configs, Complete install and Start Services. 
 ```
