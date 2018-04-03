@@ -128,7 +128,7 @@ bash provision-cluster.sh
 
 ## OPTION 2 :: Install HDP
 
-[<img src="https://raw.githubusercontent.com/sainib/ambari-util/ambari-bootstarp/Screen%20Shot%202018-04-02%20at%205.46.51%20PM.png">]
+[<img src="https://raw.githubusercontent.com/sainib/ambari-util/master/ambari-bootstarp/Screen%20Shot%202018-04-02%20at%205.46.51%20PM.png">]
 
 
 ## Change configs, Complete install and Start Services. 
