@@ -127,12 +127,8 @@ bash provision-cluster.sh
 ```
 
 ## OPTION 2 :: Install HDP
-* Install wih 4 masters and 4 workers
-* For masters, do the following 
-  * Master 1 = Namennode etc
-  * Master 2 = Hive and all hive related components 
-  * Master 3 = Grafana, Metric etc (Keep it light, will be used for DRUID) 
-  * Master 4 = Spark and Spark2 (Keep it light, will be used for Ranger) 
+
+[<img src="https://raw.githubusercontent.com/sainib/ambari-util/ambari-bootstarp/Screen%20Shot%202018-04-02%20at%205.46.51%20PM.png">]
 
 
 ## Change configs, Complete install and Start Services. 
