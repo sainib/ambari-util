@@ -32,4 +32,4 @@ bash run_command.sh "yum-complete-transaction -y"
 
 bash run_command.sh 'wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm'
 bash run_command.sh 'sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm'
-bash run_command.sh 'yum update'
+bash run_command.sh 'yum update -y'
