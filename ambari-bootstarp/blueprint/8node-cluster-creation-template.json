@@ -38,15 +38,7 @@
       "name" : "host_group_5", 
       "hosts" : [         
         {
-          "fqdn" : "birens4.field.hortonworks.com,birens5.field.hortonworks.com,birens6.field.hortonworks.com"
-        }
-      ]
-    },
-    {
-      "name" : "host_group_6", 
-      "hosts" : [         
-        {
-          "fqdn" : "birens7.field.hortonworks.com"
+          "fqdn" : "birens4.field.hortonworks.com,birens5.field.hortonworks.com,birens6.field.hortonworks.com,birens7.field.hortonworks.com"
         }
       ]
     }
