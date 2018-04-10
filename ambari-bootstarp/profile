@@ -1,0 +1,4 @@
+
+alias cdhdf="cd /usr/hdf/current/"
+alias cdkaf="cd /usr/hdf/current/kafka-broker/bin"
+

@@ -9,9 +9,11 @@ bash run_command.sh 'systemctl start ntpd'
 
 bash copy_file.sh ~/install/hosts /tmp
 bash copy_file.sh ~/install/worker-0.sh /tmp
+bash copy_file.sh ~/install/profile /tmp
 
 bash run_command.sh 'bash /tmp/worker-0.sh'
 bash run_command.sh 'umask 0022'
+bash run_command.sh 'cat /tmp/profile >> ~/.profile'
 
 bash copy_file.sh ~/install/worker-1.sh /tmp
 bash run_command.sh 'bash /tmp/worker-1.sh'
