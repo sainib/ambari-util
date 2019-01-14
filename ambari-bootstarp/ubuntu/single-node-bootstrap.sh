@@ -2,7 +2,7 @@
 
 sudo su 
 
-apt install -y install git
+apt install -y git
 cd
 git clone https://github.com/sainib/ambari-util.git
 cd /root/ambari-util/ambari-bootstarp/ubuntu
