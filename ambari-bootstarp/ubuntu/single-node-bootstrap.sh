@@ -84,7 +84,7 @@ fi
 apt install -y -q python-pip
 pip install --upgrade pip
 
-apt install libmysql-java/xenial
+apt install libmysql-java
 
 
 --INSTALL AMBARI 
