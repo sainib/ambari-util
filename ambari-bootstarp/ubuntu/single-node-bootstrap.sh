@@ -89,5 +89,8 @@ fi
 
 apt install -y -q python-pip
 pip install --upgrade pip
-pip install numpy
+
+apt install libmysql-java/xenial
+
+sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql.jar
 
