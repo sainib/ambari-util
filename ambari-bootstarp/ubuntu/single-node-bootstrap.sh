@@ -2,12 +2,6 @@
 
 sudo su 
 
-apt install -y git
-cd
-git clone https://github.com/sainib/ambari-util.git
-cd /root/ambari-util/ambari-bootstarp/ubuntu
-bash single-node-bootstrap.sh
-
 apt update
 apt install -y curl ntp openssl python zlib1g-dev wget unzip openssh-client ntp
 
