@@ -92,5 +92,9 @@ pip install --upgrade pip
 
 apt install libmysql-java/xenial
 
+
+--INSTALL AMBARI 
+--SETUP AMBARI
+
 sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql.jar
 
