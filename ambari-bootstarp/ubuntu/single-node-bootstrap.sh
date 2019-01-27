@@ -93,3 +93,12 @@ apt install libmysql-java
 sudo apt install mysql-server
 sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql.jar
 
+
+mysql
+CREATE USER 'myroot'@'%' IDENTIFIED BY '9oNio)ex1ndL'; 
+GRANT ALL PRIVILEGES ON *.* TO 'myroot'@'%' WITH GRANT OPTION; 
+commit;
+flush privileges;
+quit;
+
+
