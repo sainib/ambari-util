@@ -90,5 +90,6 @@ apt install libmysql-java
 --INSTALL AMBARI 
 --SETUP AMBARI
 
+sudo apt install mysql-server
 sudo ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql.jar
 
