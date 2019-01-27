@@ -65,12 +65,12 @@ EOF
 
 
 #vi /etc/rc.local
-
-#		echo 512 > /sys/block/xvda/queue/nr_request
-#		echo 254 > /sys/block/xvda/device/queue_depth
-#		/sbin/blockdev --setra 1024 /dev/xvda
-#		exit 0
-#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+echo 512 > /sys/block/xvda/queue/nr_request
+echo 254 > /sys/block/xvda/device/queue_depth
+/sbin/blockdev --setra 1024 /dev/xvda
+exit 0
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
