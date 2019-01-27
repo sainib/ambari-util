@@ -1,0 +1,1 @@
+https://docs.hortonworks.com/HDPDocuments/Ambari-2.6.2.0/bk_ambari-administration/content/ch_changing_host_names.html
